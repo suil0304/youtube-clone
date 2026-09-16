@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "verbatimModuleSyntax": true,
+        "strict": true,
+        "erasableSyntaxOnly": true,
+        "types": [
+            "bun"
+        ],
+        "target": "es2025"
+    }
+}
