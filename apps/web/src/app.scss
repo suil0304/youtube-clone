@@ -1,0 +1,14 @@
+@use "styles.scss" as theme;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+#root {
+    width: 100%;
+    background-color: theme.$background-color;
+}
