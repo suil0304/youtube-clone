@@ -1,8 +1,8 @@
-import { Link } from "react-router";
 import type { JSX } from "react/jsx-runtime";
 import styles from "./header.region.module.scss";
+import Logo from "../components/logo.component";
 
-function HeaderRegion():JSX.Element {
+function Header():JSX.Element {
     return (
         <header className={styles["header"]}>
             <div className={styles["left"]}>
@@ -10,11 +10,7 @@ function HeaderRegion():JSX.Element {
                     {/* 메뉴 버튼 */}
                     <img src="" alt="" />
                 </button>
-
-                <Link to="/">
-                    {/* 로고 */}
-                    <img src="" alt="" />
-                </Link>
+                <Logo />
             </div>
             
             <div className={styles["center"]}>
@@ -64,4 +60,4 @@ function HeaderRegion():JSX.Element {
     );
 }
 
-export default HeaderRegion;
+export default Header;
