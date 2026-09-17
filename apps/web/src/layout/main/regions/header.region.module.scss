@@ -1,0 +1,36 @@
+@use "styles.scss" as theme;
+
+.header {
+    @include theme.fast-flex(
+        $direction: row,
+        $justify: space-between,
+        $align: center
+    );
+
+    width: 100%;
+    height: 56px;
+
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.left {
+    @include theme.fast-flex(
+        $direction: row,
+        $align: center
+    );
+}
+
+.center {
+    @include theme.fast-flex(
+        $direction: row,
+        $align: center
+    );
+}
+
+.right {
+    @include theme.fast-flex(
+        $direction: row,
+        $align: center
+    );
+}
