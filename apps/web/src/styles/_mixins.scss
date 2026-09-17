@@ -1,0 +1,51 @@
+@use "./variables" as theme;
+
+/**
+ * 빠르게 한 번에 flex로 설정할 수 있습니다.
+ *
+ * @params $flex-direction {flex-direction value}
+ * @params $justify {justify-content value}
+ * @params $align {align-items value}
+ */
+@mixin fast-flex(
+    $direction: row,
+    $justify: null,
+    $align: null
+) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify; // flex-direction의 주 축입니다.
+    align-items: $align; // flex-direction의 교차 축입니다.
+}
+
+/**
+ * a 태그의 기본 스타일을 변경합니다.
+ * 
+ * @params $link-decoration-line {text-decoration-line value}
+ * @params $link-color {color value}
+ * @params $visited-decoration-line {text-decoration-line value}
+ * @params $visited-color {color value}
+ */
+@mixin change-a-style(
+    $link-decoration-line: none,
+    $link-color: theme.$text-color,
+    $visited-decoration-line: none,
+    $visited-color: theme.$text-color
+) {
+    &:link {
+        text-decoration-line: $link-decoration-line;
+        color: $link-color;
+    }
+
+    &:visited {
+        text-decoration-line: $visited-decoration-line;
+        color: $visited-color;
+    }
+}
+
+/**
+ * a 태그의 기본 스타일을 지웁니다.
+ */
+@mixin remove-a-style() {
+    @include change-a-style();
+}
