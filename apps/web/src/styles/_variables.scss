@@ -2,19 +2,58 @@
 :root {
     --background-color: #FFF;
 
+    // text
     --text-color: #000;
     --text-muted-color: #626262;
+
+    // grey
+    --grey-50: #f1f1f1;
+    --grey-100: #e0e0e0;
+    --grey-200: #cecece;
+    --grey-300: #b7b7b7;
+    --grey-400: #9c9c9c;
+    --grey-500: #818181;
+    --grey-600: #646464;
+    --grey-700: #484848;
+    --grey-800: #2c2c2c;
+    --grey-900: #111111;
 }
 
 :root[data-theme="dark"] {
     --background-color: #0F0F0F;
 
+    // text
     --text-color: #e7e7e7;
     --text-muted-color: #aaaaaa;
+
+    // grey
+    --grey-50: #fafafa;
+    --grey-100: #f2f2f2;
+    --grey-200: #dcdcdc;
+    --grey-300: #c1c1c1;
+    --grey-400: #a4a4a4;
+    --grey-500: #878787;
+    --grey-600: #686868;
+    --grey-700: #4a4a4a;
+    --grey-800: #2d2d2d;
+    --grey-900: #111111;
 }
 
 // SCSS variables
 $background-color: var(--background-color);
 
+// text
 $text-color: var(--text-color);
 $text-muted-color: var(--text-muted-color);
+
+/// grey
+$grey-50: var(--grey-50);
+$grey-100: var(--grey-100);
+$grey-200: var(--grey-200);
+$grey-300: var(--grey-300);
+$grey-400: var(--grey-400);
+$grey-500: var(--grey-500);
+$grey-600: var(--grey-600);
+$grey-700: var(--grey-700);
+$grey-800: var(--grey-800);
+$grey-900: var(--grey-900);

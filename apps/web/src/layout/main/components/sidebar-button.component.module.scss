@@ -1,0 +1,44 @@
+@use "styles.scss" as theme;
+
+.menu-button {
+    cursor: pointer;
+
+    position: relative;
+
+    background-color: theme.$background-color;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    border-color: transparent;
+
+    &:hover {
+        background-color: theme.$grey-200;
+    }
+
+    &:active {
+        background-color: theme.$grey-300;
+    }
+}
+
+.menu-img-box {
+    pointer-events: none;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 24px;
+    height: 30px;
+}
+
+.menu-img {
+    object-fit: fill;
+
+    width: 100%;
+    height: 100%;
+}

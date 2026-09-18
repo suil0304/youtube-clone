@@ -17,8 +17,11 @@
 .left {
     @include theme.fast-flex(
         $direction: row,
+        $justify: space-between,
         $align: center
     );
+
+    width: 168px;
 }
 
 .center {

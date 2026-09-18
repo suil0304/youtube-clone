@@ -1,15 +1,13 @@
 import type { JSX } from "react/jsx-runtime";
 import styles from "./header.region.module.scss";
 import Logo from "../components/logo.component";
+import SidebarButton from "../components/sidebar-button.component";
 
 function Header():JSX.Element {
     return (
         <header className={styles["header"]}>
             <div className={styles["left"]}>
-                <button type="button">
-                    {/* 메뉴 버튼 */}
-                    <img src="" alt="" />
-                </button>
+                <SidebarButton />
                 <Logo />
             </div>
             
