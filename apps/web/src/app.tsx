@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import type { JSX } from "react/jsx-runtime";
 import type { Theme } from "./types";
-import "./app.scss";
+import "./styles/global.scss";
 import MainLayout from "./layout/main/main.layout";
 import { useSettingsStore } from "./stores/settings.store";
 
