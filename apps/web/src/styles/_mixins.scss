@@ -8,7 +8,7 @@
  * @params $align {align-items value}
  */
 @mixin fast-flex(
-    $direction: row,
+    $direction: column,
     $justify: null,
     $align: null
 ) {
