@@ -2,6 +2,7 @@ import type { JSX } from "react/jsx-runtime";
 import styles from "./header.region.module.scss";
 import Logo from "../components/logo.component";
 import SidebarButton from "../components/sidebar-button.component";
+import SearchBar from "../components/search-bar.component";
 
 function Header():JSX.Element {
     return (
@@ -12,30 +13,7 @@ function Header():JSX.Element {
             </div>
             
             <div className={styles["center"]}>
-                <form>
-                    <div>
-                        <div>
-                            {/* search */}
-                            <img src="" alt="" /> {/** 기본 숨김 */}
-                            <input type="text" />
-                            <div>
-                                <button type="button">
-                                    {/* 키보드 표시 */}
-                                    <img src="" alt="" />
-                                </button>
-                                <button type="button"> {/** 기본 숨김 */}
-                                    {/* 현재 입력 검색어 삭제 */}
-                                    <img src="" alt="" />
-                                </button>
-                            </div>
-                        </div>
-                    
-                        <button type="submit">
-                            {/* 검색 버튼 */}
-                            <img src="" alt="" />
-                        </button>
-                    </div>
-                </form>
+                <SearchBar />
 
                 {/* 음성 인식 */}
                 <button type="button">

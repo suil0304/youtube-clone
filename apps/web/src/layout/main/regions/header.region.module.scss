@@ -29,6 +29,15 @@
         $direction: row,
         $align: center
     );
+
+    flex: 1;
+
+    max-width: 592px;
+    min-width: 0px;
+
+    > *:first-child {
+        margin-right: 16px;
+    }
 }
 
 .right {
