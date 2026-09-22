@@ -2,9 +2,15 @@
 :root {
     --background-color: #FFF;
 
+    // border
+    --border-color: #dadada;
+
     // text
     --text-color: #000;
     --text-muted-color: #626262;
+
+    // semantic
+    --accent-color: #1567cb;
 
     // grey
     --grey-50: #f1f1f1;
@@ -21,6 +27,9 @@
 
 :root[data-theme="dark"] {
     --background-color: #0F0F0F;
+
+    // border
+    --border-color: #4d4d4d;
 
     // text
     --text-color: #e7e7e7;
@@ -42,9 +51,15 @@
 // SCSS variables
 $background-color: var(--background-color);
 
-// text
+// border
+$border-color: var(--border-color);
+
+/// text
 $text-color: var(--text-color);
 $text-muted-color: var(--text-muted-color);
+
+// semantic
+$accent-color: var(--accent-color);
 
 /// grey
 $grey-50: var(--grey-50);
