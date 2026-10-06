@@ -1,6 +1,39 @@
 @use "./variables" as theme;
 
 /**
+ * 동그란 버튼 스타일을 만듭니다.
+ */
+@mixin circular-button($background-color: theme.$background-color) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    cursor: pointer;
+
+    background-color: $background-color;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    border-color: transparent;
+
+    &:hover,
+    &:active:not(:hover) {
+        background-color: theme.$grey-200;
+    }
+
+    &:active {
+        background-color: theme.$grey-300;
+    }
+
+    & img {
+        pointer-events: none;
+    }
+}
+
+/**
  * 빠르게 한 번에 flex로 설정할 수 있습니다.
  *
  * @params $flex-direction {flex-direction value}
