@@ -1,5 +1,5 @@
 import type { JSX } from "react/jsx-runtime";
-import styles from "./three-dot-button.module.scss";
+import styles from "./three-dot-button.component.module.scss";
 import moreVert from "../../../assets/icons/more_vert.svg";
 
 // 로그인 X
@@ -7,7 +7,7 @@ import moreVert from "../../../assets/icons/more_vert.svg";
 function ThreeDotButton():JSX.Element {
     return (
         <button type="button" className={styles["three-dot-button"]}>
-            <img src={moreVert} alt="" />
+            <img src={moreVert} alt="YT Three Dot" />
         </button>
     );
 }
