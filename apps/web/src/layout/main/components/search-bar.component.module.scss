@@ -103,7 +103,11 @@
 
     border: none;
 
-    padding: 4px
+    padding: 4px;
+
+    & img {
+        pointer-events: none;
+    }
 }
 
 .keyboard-button {
