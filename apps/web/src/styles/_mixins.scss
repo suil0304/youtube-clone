@@ -2,30 +2,39 @@
 
 /**
  * 동그란 버튼 스타일을 만듭니다.
+ *
+ * @params $normal-color {color}
+ * @params $hover-color {color}
+ * @params $border-color {color}
  */
-@mixin circular-button($background-color: theme.$background-color) {
+@mixin circular-button(
+    $normal-color: theme.$background-color,
+    $hover-color: theme.$grey-200,
+    $border-color: transparent
+) {
     display: flex;
     flex-direction: row;
     align-items: center;
 
     cursor: pointer;
 
-    background-color: $background-color;
+    background-color: $normal-color;
 
     width: 40px;
     height: 40px;
 
     border-radius: 50%;
 
-    border-color: transparent;
+    border-color: $border-color;
 
     &:hover,
     &:active:not(:hover) {
-        background-color: theme.$grey-200;
+        background-color: $hover-color;
     }
 
     &:active {
-        background-color: theme.$grey-300;
+        // background-color: theme.$grey-300;
+        background-color: color-mix(in srgb, $hover-color 87%, #000);
     }
 
     & img {

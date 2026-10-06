@@ -2,6 +2,6 @@
 
 .speech-recognition-button {
     @include theme.circular-button(
-        $background-color: theme.$grey-50
+        $normal-color: theme.$grey-50
     );
 }
