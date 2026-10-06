@@ -5,6 +5,7 @@ import SidebarButton from "../components/sidebar-button.component";
 import SearchBar from "../components/search-bar.component";
 import SpeechRecognitionButton from "../components/speech-recognition-button.component";
 import ThreeDotButton from "../components/three-dot-button.component";
+import LoginButton from "../components/login-button.component";
 
 function Header():JSX.Element {
     return (
@@ -21,12 +22,7 @@ function Header():JSX.Element {
 
             <div className={styles["right"]}>
                 <ThreeDotButton />
-
-                <button type="button">
-                    {/* 로그인 */}
-                    <img src="" alt="" />
-                    로그인
-                </button>
+                <LoginButton />
             </div>
         </header>
     );

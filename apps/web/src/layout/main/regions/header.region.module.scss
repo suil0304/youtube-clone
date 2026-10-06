@@ -45,4 +45,8 @@
         $direction: row,
         $align: center
     );
+
+    > *:first-child {
+        margin-right: 8px;
+    }
 }
