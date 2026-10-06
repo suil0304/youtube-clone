@@ -1,0 +1,5 @@
+@use "styles.scss" as theme;
+
+.three-dot-button {
+    @include theme.circular-button();
+}

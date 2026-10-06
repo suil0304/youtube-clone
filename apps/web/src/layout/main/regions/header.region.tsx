@@ -4,6 +4,7 @@ import Logo from "../components/logo.component";
 import SidebarButton from "../components/sidebar-button.component";
 import SearchBar from "../components/search-bar.component";
 import SpeechRecognitionButton from "../components/speech-recognition-button.component";
+import ThreeDotButton from "../components/three-dot-button.component";
 
 function Header():JSX.Element {
     return (
@@ -19,9 +20,7 @@ function Header():JSX.Element {
             </div>
 
             <div className={styles["right"]}>
-                <button type="button">
-                    {/* 점 3개 버튼 */}
-                </button>
+                <ThreeDotButton />
 
                 <button type="button">
                     {/* 로그인 */}
