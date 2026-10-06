@@ -3,6 +3,7 @@ import styles from "./header.region.module.scss";
 import Logo from "../components/logo.component";
 import SidebarButton from "../components/sidebar-button.component";
 import SearchBar from "../components/search-bar.component";
+import SpeechRecognitionButton from "../components/speech-recognition-button.component";
 
 function Header():JSX.Element {
     return (
@@ -14,11 +15,7 @@ function Header():JSX.Element {
             
             <div className={styles["center"]}>
                 <SearchBar />
-
-                {/* 음성 인식 */}
-                <button type="button">
-                    <img src="" alt="" />
-                </button>
+                <SpeechRecognitionButton />
             </div>
 
             <div className={styles["right"]}>

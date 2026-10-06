@@ -1,0 +1,7 @@
+@use "styles.scss" as theme;
+
+.speech-recognition-button {
+    @include theme.circular-button(
+        $background-color: theme.$grey-50
+    );
+}
