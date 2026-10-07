@@ -1,4 +1,40 @@
-@use "./variables" as theme;
+@use "sass:list";
+@use "./variables" as variables;
+@use "./functions" as functions;
+
+/**
+ * 인터렉티브한 스타일을 적용합니다.
+ *
+ * @params $normal-color {color}
+ * @params $hover-color {color}
+ */
+@mixin interaction-thingie(
+    $normal-color: variables.$background-color,
+    $hover-color: variables.$grey-200
+) {
+    background-color: $normal-color;
+
+    &:hover,
+    &:active:not(:hover) {
+        background-color: $hover-color;
+    }
+
+    &:active {
+        // background-color: variables.$grey-300;
+        background-color: color-mix(in srgb, $hover-color 87%, variables.$background-invert-color);
+    }
+}
+
+/**
+ * 색에서 계산한 HSL 필터를 내부 모든 img(svg)에 적용합니다.. 
+ *
+ * @params $color {color}
+ */
+@mixin set-inner-svg-color($color) {
+    & img {
+        filter: functions.get-svg-filter-by-color($color);
+    }
+}
 
 /**
  * 동그란 버튼 스타일을 만듭니다.
@@ -8,10 +44,15 @@
  * @params $border-color {color}
  */
 @mixin circular-button(
-    $normal-color: theme.$background-color,
-    $hover-color: theme.$grey-200,
+    $normal-color: variables.$background-color,
+    $hover-color: variables.$grey-200,
     $border-color: transparent
 ) {
+    @include interaction-thingie(
+        $normal-color,
+        $hover-color
+    );
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -19,24 +60,12 @@
 
     cursor: pointer;
 
-    background-color: $normal-color;
-
     min-width: 40px;
     min-height: 40px;
 
     border-radius: 50px;
 
     border-color: $border-color;
-
-    &:hover,
-    &:active:not(:hover) {
-        background-color: $hover-color;
-    }
-
-    &:active {
-        // background-color: theme.$grey-300;
-        background-color: color-mix(in srgb, $hover-color 87%, #000);
-    }
 
     & img {
         pointer-events: none;
@@ -71,9 +100,9 @@
  */
 @mixin change-a-style(
     $link-decoration-line: none,
-    $link-color: theme.$text-color,
+    $link-color: variables.$text-color,
     $visited-decoration-line: none,
-    $visited-color: theme.$text-color
+    $visited-color: variables.$text-color
 ) {
     &:link {
         text-decoration-line: $link-decoration-line;

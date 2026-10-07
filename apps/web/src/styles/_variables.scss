@@ -1,6 +1,7 @@
 // 실제 지정 값
 :root {
     --background-color: #FFF;
+    --background-invert-color: #000;
 
     // border
     --border-color: #dadada;
@@ -8,21 +9,6 @@
     // text
     --text-color: #000;
     --text-muted-color: #626262;
-
-    // semantic
-    --accent-color: var(--science-blue-700);
-
-    // science-blue
-    --science-blue-50: #f3feff;
-    --science-blue-100: #eaf9ff;
-    --science-blue-200: #daefff;
-    --science-blue-300: #c1e1ff;
-    --science-blue-400: #a4ceff;
-    --science-blue-500: #78b5ff;
-    --science-blue-600: #4890f2;
-    --science-blue-700: #1567cb;
-    --science-blue-800: #1d539a;
-    --science-blue-900: #003579;
 
     // grey
     --grey-50: #f1f1f1;
@@ -39,6 +25,7 @@
 
 :root[data-theme="dark"] {
     --background-color: #0F0F0F;
+    --background-invert-color: #fff;
 
     // border
     --border-color: #4d4d4d;
@@ -61,31 +48,19 @@
 }
 
 // SCSS variables
-$background-color: var(--background-color);
+// science-blue
+$science-blue-50: #f3feff;
+$science-blue-100: #eaf9ff;
+$science-blue-200: #daefff;
+$science-blue-300: #c1e1ff;
+$science-blue-400: #a4ceff;
+$science-blue-500: #78b5ff;
+$science-blue-600: #4890f2;
+$science-blue-700: #1567cb;
+$science-blue-800: #1d539a;
+$science-blue-900: #003579;
 
-// border
-$border-color: var(--border-color);
-
-/// text
-$text-color: var(--text-color);
-$text-muted-color: var(--text-muted-color);
-
-// semantic
-$accent-color: var(--accent-color);
-
-/// science-blue
-$science-blue-50: var(--science-blue-50);
-$science-blue-100: var(--science-blue-100);
-$science-blue-200: var(--science-blue-200);
-$science-blue-300: var(--science-blue-300);
-$science-blue-400: var(--science-blue-400);
-$science-blue-500: var(--science-blue-500);
-$science-blue-600: var(--science-blue-600);
-$science-blue-700: var(--science-blue-700);
-$science-blue-800: var(--science-blue-800);
-$science-blue-900: var(--science-blue-900);
-
-/// grey
+// grey
 $grey-50: var(--grey-50);
 $grey-100: var(--grey-100);
 $grey-200: var(--grey-200);
@@ -96,3 +71,16 @@ $grey-600: var(--grey-600);
 $grey-700: var(--grey-700);
 $grey-800: var(--grey-800);
 $grey-900: var(--grey-900);
+
+// semantic
+$accent-color: $science-blue-700;
+
+$background-color: var(--background-color);
+$background-invert-color: var(--background-invert-color);
+
+// border
+$border-color: var(--border-color);
+
+// text
+$text-color: var(--text-color);
+$text-muted-color: var(--text-muted-color);

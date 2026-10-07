@@ -1,0 +1,88 @@
+@use "sass:meta";
+@use "sass:color";
+@use "sass:list";
+@use "sass:math";
+
+/**
+ * 색을 rgb list로 변환합니다.
+ *
+ * @params $color {color}
+ */
+@function to-rgb($color) {
+    $color-channel: meta.get-function("channel", $module: "color");
+    $r: meta.call($color-channel, $color, "red", $space: rgb);
+    $g: meta.call($color-channel, $color, "green", $space: rgb);
+    $b: meta.call($color-channel, $color, "blue", $space: rgb);
+
+    @return ($r $g $b);
+}
+
+/**
+ * 색에서 svg에 적용할 HSL 필터를 계산합니다. 
+ *
+ * @params $color {color}
+ */
+@function get-svg-filter-by-color($color) {
+    $rgb: to-rgb($color);
+
+    $r-normalization: math.div(list.nth($rgb, 1), 255);
+    $g-normalization: math.div(list.nth($rgb, 2), 255);
+    $b-normalization: math.div(list.nth($rgb, 3), 255);
+
+    $max: math.max(
+        $r-normalization,
+        $g-normalization,
+        $b-normalization
+    );
+    $min: math.min(
+        $r-normalization,
+        $g-normalization,
+        $b-normalization
+    );
+
+    $delta: $max - $min;
+
+    $hue: null;
+    @if($delta == 0) {
+        $hue: 0;
+    }
+    @else {
+        $mult: null;
+        @if($max == $r-normalization) {
+            $hue: math.div($g-normalization - $b-normalization, $delta);
+            @if($hue < 0) {
+                $hue: $hue + 6;
+            }
+        }
+        @else if($max == $g-normalization) {
+            $mult: math.div($b-normalization - $r-normalization, $delta) + 2;
+        }
+        @else if($max == $b-normalization) {
+            $mult: math.div($r-normalization - $g-normalization, $delta) + 4;
+        }
+
+        $hue: 60 * $mult;
+    }
+
+    $lightness: math.div($max + $min, 2);
+
+    $saturation: null;
+    @if($lightness == 0 or $lightness == 1) {
+        $saturation: 0;
+    }
+    @else {
+        $saturation: math.div($delta, 1 - math.abs(2 * $lightness - 1));
+    }
+
+    $hue-target: $hue - 37;
+    @if($hue-target < 0) {
+        $hue-target: $hue-target + 360;
+    }
+    $hue-target: math.round($hue-target % 360);
+
+    $saturation-target: math.round($saturation * 100 * 3);
+
+    $lightness-target: math.round(math.div($lightness, 0.5) * 100);
+
+    @return unquote("invert(100%) brightness(50%) sepia(100%) hue-rotate(#{$hue-target}deg) saturate(#{$saturation-target}%) brightness(#{$lightness-target}%)");
+}

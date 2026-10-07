@@ -5,6 +5,7 @@
         $hover-color: theme.$science-blue-200,
         $border-color: theme.$border-color
     );
+    @include theme.set-inner-svg-color(#1567cb);
 
     color: theme.$accent-color;
     font-weight: 500;
