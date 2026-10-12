@@ -2,6 +2,7 @@
 @use "sass:color";
 @use "sass:list";
 @use "sass:math";
+@use "sass:string";
 
 /**
  * 색을 rgb list로 변환합니다.
@@ -84,5 +85,5 @@
 
     $lightness-target: math.round(math.div($lightness, 0.5) * 100);
 
-    @return unquote("invert(100%) brightness(50%) sepia(100%) hue-rotate(#{$hue-target}deg) saturate(#{$saturation-target}%) brightness(#{$lightness-target}%)");
+    @return string.unquote("invert(100%) brightness(50%) sepia(100%) hue-rotate(#{$hue-target}deg) saturate(#{$saturation-target}%) brightness(#{$lightness-target}%)");
 }
