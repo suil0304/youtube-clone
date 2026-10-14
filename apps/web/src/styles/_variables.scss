@@ -21,6 +21,20 @@
     --grey-700: #484848;
     --grey-800: #2c2c2c;
     --grey-900: #111111;
+
+    // science-blue
+    --science-blue-50: #f3feff;
+    --science-blue-100: #eaf9ff;
+    --science-blue-200: #daefff;
+    --science-blue-300: #c1e1ff;
+    --science-blue-400: #a4ceff;
+    --science-blue-500: #78b5ff;
+    --science-blue-600: #4890f2;
+    --science-blue-700: #1567cb;
+    --science-blue-800: #1d539a;
+    --science-blue-900: #003579;
+
+    --accent-color: var(--science-blue-700);
 }
 
 :root[data-theme="dark"] {
@@ -48,17 +62,28 @@
 }
 
 // SCSS variables
+$background-color: var(--background-color);
+$background-invert-color: var(--background-invert-color);
+
+// border
+$border-color: var(--border-color);
+
+// text
+$text-color: var(--text-color);
+$text-muted-color: var(--text-muted-color);
+
+
 // science-blue
-$science-blue-50: #f3feff;
-$science-blue-100: #eaf9ff;
-$science-blue-200: #daefff;
-$science-blue-300: #c1e1ff;
-$science-blue-400: #a4ceff;
-$science-blue-500: #78b5ff;
-$science-blue-600: #4890f2;
-$science-blue-700: #1567cb;
-$science-blue-800: #1d539a;
-$science-blue-900: #003579;
+$science-blue-50: var(--science-blue-50);
+$science-blue-100: var(--science-blue-100);
+$science-blue-200: var(--science-blue-200);
+$science-blue-300: var(--science-blue-300);
+$science-blue-400: var(--science-blue-400);
+$science-blue-500: var(--science-blue-500);
+$science-blue-600: var(--science-blue-600);
+$science-blue-700: var(--science-blue-700);
+$science-blue-800: var(--science-blue-800);
+$science-blue-900: var(--science-blue-900);
 
 // grey
 $grey-50: var(--grey-50);
@@ -73,14 +98,4 @@ $grey-800: var(--grey-800);
 $grey-900: var(--grey-900);
 
 // semantic
-$accent-color: $science-blue-700;
-
-$background-color: var(--background-color);
-$background-invert-color: var(--background-invert-color);
-
-// border
-$border-color: var(--border-color);
-
-// text
-$text-color: var(--text-color);
-$text-muted-color: var(--text-muted-color);
+$accent-color: var(--accent-color);

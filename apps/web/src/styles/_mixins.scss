@@ -1,6 +1,5 @@
 @use "sass:list";
 @use "./variables" as variables;
-@use "./functions" as functions;
 
 /**
  * 인터렉티브한 스타일을 적용합니다.
@@ -22,17 +21,6 @@
     &:active {
         // background-color: variables.$grey-300;
         background-color: color-mix(in srgb, $hover-color 87%, variables.$background-invert-color);
-    }
-}
-
-/**
- * 색에서 계산한 HSL 필터를 내부 모든 img(svg)에 적용합니다.. 
- *
- * @params $color {color}
- */
-@mixin set-inner-svg-color($color) {
-    & img {
-        filter: functions.get-svg-filter-by-color($color);
     }
 }
 
@@ -69,6 +57,24 @@
 
     & img {
         pointer-events: none;
+    }
+}
+
+/**
+ * 내부 아이템을 margin-bottom으로 전부 띄웁니다.
+ *
+ * @params $margin {distance}
+ */
+@mixin inner-item-spacer($margin: 8px, $plus-condition: false) {
+    @if($plus-condition == true) {
+        &:not(:last-child) {
+            margin-bottom: $margin;
+        }
+    }
+    @else {
+        > *:not(:last-child) {
+            margin-bottom: $margin;
+        }
     }
 }
 
