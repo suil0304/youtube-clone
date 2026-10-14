@@ -1,0 +1,54 @@
+@use "styles.scss" as theme;
+
+.a-wrapper {
+    text-decoration-line: none;
+    color: theme.$text-color;
+
+    &:link > .sidebar-item {
+        color: theme.$text-color;
+    }
+
+    &:visited > .sidebar-item {
+        color: theme.$text-color;
+    }
+}
+
+.sidebar-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    min-width: 182px;
+
+    width: 100%;
+    height: 40px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    border-radius: 10px;
+
+    font-size: 0.9em;
+
+    &:not([data-active]) {
+        @include theme.interaction-thingie(
+            $normal-color: theme.$background-color,
+            $hover-color: theme.$grey-50
+        );
+    }
+
+    &[data-active] {
+        @include theme.interaction-thingie(
+            $normal-color: theme.$grey-50,
+            $hover-color: theme.$grey-200
+        );
+    }
+
+    > svg {
+        width: 28px;
+
+        margin-right: 22px;
+    }
+}

@@ -1,9 +1,7 @@
 import { useRef, useState, type ChangeEventHandler, type MouseEventHandler } from "react";
 import type { JSX } from "react/jsx-runtime";
 import styles from "./search-bar.component.module.scss";
-import search from "../../../assets/icons/search.svg";
-import close from "../../../assets/icons/close.svg";
-import keyboard from "../../../assets/icons/keyboard.svg";
+import Icon from "../../../components/icon.component";
 
 function SearchBar():JSX.Element {
     const {
@@ -20,7 +18,11 @@ function SearchBar():JSX.Element {
             <form className={styles["search-form"]} action={formActionHandler}>
                 <div className={styles["search-input-area"]}>
                     <label htmlFor="search">
-                        <img className={styles["search-label-icon"]} src={search} alt="YT Search Label Icon" />
+                        <Icon
+                            className={styles["search-label-icon"]}
+                            iconType="search"
+                            aria-hidden
+                        />
                     </label>
                     <input
                         ref={searchInputRef}
@@ -34,22 +36,32 @@ function SearchBar():JSX.Element {
                     />
                     <div className={styles["button-group"]}>
                         <button className={styles["keyboard-button"]} type="button">
-                            <img src={keyboard} alt="YT Keyboard" />
+                            <Icon
+                                iconType="keyboard"
+                                title="YT Keyboard"
+                                titleId="yt-keyboard"
+                            />
                         </button>
                         <button
                             className={styles["reset-button"]}
                             type="reset"
                             data-active={isResetActive ? true : undefined}
                             onClick={resetClickHandler}
-                        > {/** 기본 숨김 */}
-                            {/* 현재 입력 검색어 삭제 */}
-                            <img src={close} alt="YT Search Word Reset" />
+                        >
+                            <Icon
+                                iconType="close"
+                                title="YT Search Word Reset"
+                                titleId="yt-keyboard"
+                            />
                         </button>
                     </div>
                 </div>
             
                 <button className={styles["search-button"]} type="submit">
-                    <img className={styles["search-button-icon"]} src={search} alt="YT Search Button Icon" />
+                    <Icon
+                        className={styles["search-button-icon"]}
+                        iconType="search"
+                    />
                 </button>
             </form>
         </div>

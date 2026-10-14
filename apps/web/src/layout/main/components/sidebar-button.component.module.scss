@@ -4,14 +4,7 @@
     @include theme.circular-button();
 }
 
-.menu-img-box {
+.menu-icon {
     width: 24px;
     height: 30px;
-}
-
-.menu-img {
-    object-fit: fill;
-
-    width: 100%;
-    height: 100%;
 }

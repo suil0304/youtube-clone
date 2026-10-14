@@ -5,7 +5,6 @@
         $hover-color: theme.$science-blue-200,
         $border-color: theme.$border-color
     );
-    @include theme.set-inner-svg-color(#1567cb);
 
     color: theme.$accent-color;
     font-weight: 500;
@@ -16,10 +15,14 @@
     border-style: solid;
 
     &:active {
-        border: none;
+        border-color: transparent;
     }
 
-    & > *:first-child {
+    > *:first-child {
         margin-right: 6px;
+    }
+
+    > svg {
+        color: theme.$accent-color
     }
 }
